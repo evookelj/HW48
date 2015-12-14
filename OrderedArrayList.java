@@ -92,8 +92,16 @@ public class OrderedArrayList {
     // determine whether element present in data structure using linear search
     // return index of occurrence or -1 if not found
     public int findLin( Comparable target ) 
-    { 
-	/* YOUR IMPLEMENTAITON AQUI */
+    {
+    	
+	for(int i=0; i<size(); i++) {
+		if( _data[i].compareTo(target)==0 ) {
+			return(i);
+		}
+	}
+	
+	return(-1);
+	
     }
     
     
@@ -101,7 +109,11 @@ public class OrderedArrayList {
     // return index of occurrence or -1 if not found
     public int findBin( Comparable target ) 
     { 
-	/* YOUR IMPLEMENTAITON AQUI */
+	
+	//int lower_bound, upper_bound, guess;
+	
+	//IMPLEMENT HERE
+	
     }
     
     
