@@ -140,7 +140,7 @@ public class OrderedArrayList {
 	}
 	long totTime = System.currentTimeMillis() - startTime;
 	System.out.println("Random linear search total time: " + totTime);
-	long avgTime = (long)(totTime/1000000);
+	float avgTime = (float)totTime/1000000;
 	System.out.println("Random linear search average time: " + avgTime);
 
 	//Step 3: Test random binary search
@@ -150,7 +150,7 @@ public class OrderedArrayList {
 	}
 	totTime = System.currentTimeMillis() - startTime;
 	System.out.println(" \nRandom binary search total time: " + totTime);
-	avgTime = (long)(totTime/1000000);
+	avgTime = (float)totTime/1000000;
 	System.out.println("Random binary search average time: " + avgTime + "\n~~~~~~~~~~~~~~~~~~~~~~~~");
 
 	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
@@ -182,9 +182,6 @@ public class OrderedArrayList {
 	System.out.println("\nafter population via addBinary() calls:");
 	System.out.println( Franz );
 	System.out.println();
-	
-
-	   INSERT WELL-COMMENT TIMING APPARATUS HERE
 	   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     }
     
