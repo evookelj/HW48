@@ -125,7 +125,7 @@ public class OrderedArrayList {
     // main method solely for testing purposes
     public static void main( String[] args ) {
 
-	System.out.println("\nLet's see if this works!!!!!");
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~\nLet's see if this works!!!!!");
 	// Step 1: Create 10,000 index array
 	OrderedArrayList Franz = new OrderedArrayList();
 	for( int i = 0; i < 10; i++ ) {
@@ -135,23 +135,23 @@ public class OrderedArrayList {
 
 	// Step 2: Test random linear search
 	long startTime = System.currentTimeMillis();
-	for (int i = 0; i <10000; i++){
+	for (int i = 0; i < 1000000; i++){
 	    Franz.findLin( (int)(50 * Math.random()) );
 	}
 	long totTime = System.currentTimeMillis() - startTime;
 	System.out.println("Random linear search total time: " + totTime);
-	long avgTime = (long)(totTime/10000);
-	System.out.println("Random linear search average time: " + (long)(totTime/10000.));
+	long avgTime = (long)(totTime/1000000);
+	System.out.println("Random linear search average time: " + avgTime);
 
 	//Step 3: Test random binary search
 	startTime = System.currentTimeMillis();
-	for (int i = 0; i <10000; i++){
+	for (int i = 0; i < 1000000; i++){
 	    Franz.findBin( (int)(50 * Math.random()) );
 	}
 	totTime = System.currentTimeMillis() - startTime;
 	System.out.println(" \nRandom binary search total time: " + totTime);
-	avgTime = (long)(totTime/10000);
-	System.out.println("Random binary search average time: " + (long)(totTime/10000.));
+	avgTime = (long)(totTime/1000000);
+	System.out.println("Random binary search average time: " + avgTime + "\n~~~~~~~~~~~~~~~~~~~~~~~~");
 
 	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	System.out.println("\nValues to add via addLinear() calls:");
