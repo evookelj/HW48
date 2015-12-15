@@ -122,8 +122,44 @@ public class OrderedArrayList {
     
     // main method solely for testing purposes
     public static void main( String[] args ) {
+
+	System.out.println("\nLet's see if this works!!!!!");
+	// Step 1: Create 10,000 index array
 	OrderedArrayList Franz = new OrderedArrayList();
+	for( int i = 0; i < 10; i++ ) {
+	    int valToAdd = (int)( 50 * Math.random() );
+	    Franz.addBinary( valToAdd );
+	}
+
 	
+	// Step 2: Test random linear search
+	long startTime = System.currentTimeMillis();
+	for (int i = 0; i <10000; i++){
+	    Franz.findLin( (int)(50 * Math.random()) );
+	}
+	long totTime = System.currentTimeMillis() - startTime;
+	System.out.println("Random linear search total time: " + totTime);
+	long avgTime = (long)(totTime/10000);
+	System.out.println("Random linear search average time: " + (long)(totTime/10000.));
+
+	//Step 3: Test random binary search
+	startTime = System.currentTimeMillis();
+	for (int i = 0; i <10000; i++){
+	    Franz.findBin( (int)(50 * Math.random()) );
+	}
+	totTime = System.currentTimeMillis() - startTime;
+	System.out.println(" \nRandom binary search total time: " + totTime);
+	avgTime = (long)(totTime/10000);
+	System.out.println("Random binary search average time: " + (long)(totTime/10000.));
+
+	
+
+       
+	
+	
+
+
+	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	System.out.println("\nValues to add via addLinear() calls:");
 	// testing linear search
 	for( int i = 0; i < 15; i++ ) {
@@ -135,7 +171,7 @@ public class OrderedArrayList {
 	System.out.println("\nafter population via addLinear() calls:");
 	System.out.println( Franz );
 	System.out.println("\nLinear search for 40");
-	System.out.println(Franz.findBin(40));
+	System.out.println(Franz.findLin(40));
 	System.out.println();
 	
 	Franz = new OrderedArrayList();
@@ -153,7 +189,7 @@ public class OrderedArrayList {
 	System.out.println( Franz );
 	System.out.println();
 	
-	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	   INSERT WELL-COMMENT TIMING APPARATUS HERE
 	   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     }
