@@ -128,7 +128,7 @@ public class OrderedArrayList {
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~\nLet's see if this works!!!!!");
 	// Step 1: Create 10,000 index array
 	OrderedArrayList Franz = new OrderedArrayList();
-	for( int i = 0; i < 10; i++ ) {
+	for( int i = 0; i < 1000; i++ ) {
 	    int valToAdd = (int)( 50 * Math.random() );
 	    Franz.addBinary( valToAdd );
 	}
