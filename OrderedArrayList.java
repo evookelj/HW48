@@ -93,13 +93,15 @@ public class OrderedArrayList {
     public int findBin( Comparable target ) {
 	int lobnd = 0;
 	int upbnd = size();
-	int guess;
+	int guess=0;
 	int comp = -5;
 	int ctr=0;
+	int size = size();
 
-	while (ctr < size()) {
+	while (ctr < size && guess<size) {
 	    guess = (lobnd+upbnd)/2;
-	    if (ctr%2==0 && (guess-size() > 1)) guess += 1;
+	    if (ctr%2==0 && (size-guess > 1)) guess+=1;
+	    if (size==guess) guess-=1;
 	    
 	    comp = _data.get(guess).compareTo(target);
 
@@ -131,7 +133,6 @@ public class OrderedArrayList {
 	    Franz.addBinary( valToAdd );
 	}
 
-	
 	// Step 2: Test random linear search
 	long startTime = System.currentTimeMillis();
 	for (int i = 0; i <10000; i++){
@@ -151,13 +152,6 @@ public class OrderedArrayList {
 	System.out.println(" \nRandom binary search total time: " + totTime);
 	avgTime = (long)(totTime/10000);
 	System.out.println("Random binary search average time: " + (long)(totTime/10000.));
-
-	
-
-       
-	
-	
-
 
 	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	System.out.println("\nValues to add via addLinear() calls:");
